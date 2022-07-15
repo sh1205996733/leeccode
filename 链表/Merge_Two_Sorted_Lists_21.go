@@ -6,7 +6,7 @@ package linkedlist
 // 方法一：栈 双指针，比较俩指针大小，小的指针加入新的新的节点，向前挪 直到有一个指针走完，把另一个指针剩余部分都加到新的节点后面
 // 时间复杂度：O(n + m)
 // 空间复杂度：O(1)
-func mergeTwoLists1(list1 *ListNode, list2 *ListNode) *ListNode {
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	first := list1
 	second := list2
 	dummy := &ListNode{0, nil}
@@ -30,10 +30,10 @@ func mergeTwoLists1(list1 *ListNode, list2 *ListNode) *ListNode {
 	return dummy.Next
 }
 
-// 方法一：递归 判断 l1 和 l2 哪一个链表的头节点的值更小，然后递归地决定下一个添加到结果里的节点
+// 方法二：递归 判断 l1 和 l2 哪一个链表的头节点的值更小，然后递归地决定下一个添加到结果里的节点
 // 时间复杂度：O(n + m)
 // 空间复杂度：O(n + m)
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+func mergeTwoLists1(list1 *ListNode, list2 *ListNode) *ListNode {
 	if list1 == nil {
 		return list2
 	}
