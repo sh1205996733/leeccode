@@ -47,14 +47,14 @@ func TestMergeKLists(t *testing.T) {
 
 // 两两交换链表中的节点
 func TestWwapPairs(t *testing.T) {
-	l1 := MakeLinkedList([]int{1, 2, 3, 4})
+	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5})
 	l3 := swapPairs(l1)
 	PrintLinkedList(l3)
 }
 
 //  K 个一组翻转链表
 func TestReverseKGroup(t *testing.T) {
-	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5})
-	l3 := reverseKGroup(l1, 2)
+	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5, 6, 7, 8})
+	l3 := reverseKGroup(l1, 3)
 	PrintLinkedList(l3)
 }
