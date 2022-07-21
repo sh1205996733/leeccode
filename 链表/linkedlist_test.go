@@ -58,3 +58,24 @@ func TestReverseKGroup(t *testing.T) {
 	l3 := reverseKGroup(l1, 3)
 	PrintLinkedList(l3)
 }
+
+//  旋转链表
+func TestRotateRight(t *testing.T) {
+	l1 := MakeLinkedList([]int{0, 1, 2})
+	l3 := rotateRight(l1, 4)
+	PrintLinkedList(l3)
+}
+
+//  删除排序链表中的重复元素
+func TestDeleteDuplicates(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 1, 2, 3, 3})
+	l3 := deleteDuplicates(l1)
+	PrintLinkedList(l3)
+}
+
+//  删除排序链表中的重复元素II
+func TestDeleteDuplicatesII(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 1, 2, 3, 3})
+	l3 := deleteDuplicatesII(l1)
+	PrintLinkedList(l3)
+}
