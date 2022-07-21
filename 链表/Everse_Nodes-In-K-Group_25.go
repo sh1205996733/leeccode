@@ -17,21 +17,24 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 			i--
 		}
 		if i == 0 && cur != nil {
-			reverse(start, cur.Next)
+			cur = reverse(start, cur)
 		}
 	}
 	return dammy.Next
 }
 
-// 翻转链表 0-1-2-4-5-6-7-8
-func reverse(head, end *ListNode) {
+// 翻转链表 0, 1, 2, 3  --> 0, 3, 2, 1  1
+func reverse(head, tail *ListNode) *ListNode {
 	cur := head.Next
-	var newHead *ListNode
-	for cur != end {
+	newHead := tail.Next
+	for cur != tail {
 		next := cur.Next
 		cur.Next = newHead
 		newHead = cur
 		cur = next
 	}
-	head.Next = newHead
+	cur.Next = newHead
+	newHead = head.Next
+	head.Next = cur
+	return newHead
 }
