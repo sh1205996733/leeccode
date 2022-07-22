@@ -75,7 +75,15 @@ func TestDeleteDuplicates(t *testing.T) {
 
 //  删除排序链表中的重复元素II
 func TestDeleteDuplicatesII(t *testing.T) {
-	l1 := MakeLinkedList([]int{1, 1, 2, 3, 3})
+	l1 := MakeLinkedList([]int{2, 3, 3})
 	l3 := deleteDuplicatesII(l1)
+	PrintLinkedList(l3)
+}
+
+//  删除排序链表中的重复元素II
+func TestGetIntersectionNode(t *testing.T) {
+	l1 := MakeLinkedList([]int{4, 1, 8, 4, 5})
+	l2 := MakeLinkedList([]int{5, 0, 1, 8, 4, 5})
+	l3 := getIntersectionNode(l1, l2)
 	PrintLinkedList(l3)
 }

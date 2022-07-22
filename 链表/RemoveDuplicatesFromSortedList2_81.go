@@ -6,12 +6,12 @@ package linkedlist
 // 方法一: 迭代 双指针
 // 时间复杂度为 O(n)
 // 空间复杂度：O(1)
-func deleteDuplicatesII(head *ListNode) *ListNode {
+func deleteDuplicatesII0(head *ListNode) *ListNode {
 	dammyHead := &ListNode{0, nil}
 	cur := head
-	tail := head
+	//tail := head
 	for cur != nil && cur.Next != nil {
-		if cur.Val != cur.Next.Val && {
+		if cur.Val != cur.Next.Val {
 			dammyHead.Next = cur
 		} else {
 		}
@@ -20,16 +20,16 @@ func deleteDuplicatesII(head *ListNode) *ListNode {
 	return dammyHead.Next
 }
 
-// 方法一: 递归
+// 方法二: 递归
 // 时间复杂度为 O(n)
 // 空间复杂度：O(n)
-//func deleteDuplicatesII(head *ListNode) *ListNode {
-//	if head.Next == nil {
-//		return head
-//	}
-//	head.Next = deleteDuplicates(head.Next)
-//	if head.Val == head.Next.Val {
-//		return head.Next
-//	}
-//	return head
-//}
+func deleteDuplicatesII(head *ListNode) *ListNode {
+	if head.Next == nil {
+		return head
+	}
+	head.Next = deleteDuplicates(head.Next)
+	if head.Val == head.Next.Val {
+		return head.Next.Next
+	}
+	return head
+}
