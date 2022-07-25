@@ -7,8 +7,8 @@ package linkedlist
 // 时间复杂度为 O(n^2)
 // 空间复杂度：O(1)
 func reverseKGroup(head *ListNode, k int) *ListNode {
-	dammy := &ListNode{0, head}
-	cur := dammy
+	dummyHead := &ListNode{0, head}
+	cur := dummyHead
 	for cur != nil {
 		start := cur
 		i := k
@@ -20,7 +20,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 			cur = reverse(start, cur)
 		}
 	}
-	return dammy.Next
+	return dummyHead.Next
 }
 
 // 翻转链表 0, 1, 2, 3  --> 0, 3, 2, 1  1

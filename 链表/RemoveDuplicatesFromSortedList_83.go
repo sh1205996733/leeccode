@@ -18,7 +18,7 @@ func deleteDuplicates0(head *ListNode) *ListNode {
 	return head
 }
 
-// 方法一: 递归
+// 方法二: 递归
 // 时间复杂度为 O(n)
 // 空间复杂度：O(n)
 func deleteDuplicates(head *ListNode) *ListNode {
