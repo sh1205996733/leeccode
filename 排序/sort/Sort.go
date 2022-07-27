@@ -22,23 +22,13 @@ func DoSort(array []int, sort Sort) {
 	f.FieldByName("Name").SetString(f.Type().Name())
 	f.FieldByName("Array").Set(reflect.ValueOf(array))
 	begin := time.Now()
-	sort.Sort(array)
+	sort.Sort()
 	f.FieldByName("Time").SetInt(time.Since(begin).Milliseconds())
 }
 
 type Sort interface {
-	Sort([]int)
+	Sort()
 }
-
-//func (a *BaseSort) Len() int { // 重写 Len() 方法
-//	return len(a)
-//}
-//func (a *BaseSort) Swap(i, j int) { // 重写 Swap() 方法
-//	a[i], a[j] = a[j], a[i]
-//}
-//func (a *BaseSort) Less(i, j int) bool { // 重写 Less() 方法， 从大到小排序
-//	return a[j].CreatedAt.UnixNano() < a[i].CreatedAt.UnixNano()
-//}
 
 /**
  * 返回值等于0，代表 array[i1] == array[i2]
@@ -104,20 +94,17 @@ func numberString(number int) string {
 }
 
 func (i *BaseSort) isStable() bool {
-	//if (this instanceof BucketSort) return true;
-	//if (this instanceof RadixSort) return true;
-	//if (this instanceof CountingSort) return true;
-	//if (this instanceof ShellSort) return false;
-	//if (this instanceof SelectionSort) return false;
-	//Student[] students = new Student[20];
-	//for (int i = 0; i < students.length; i++) {
-	//	students[i] = new Student(i * 10, 10);
-	//}
-	//sort((T[]) students);
-	//for (int i = 1; i < students.length; i++) {
-	//	int score = students[i].score;
-	//	int prevScore = students[i - 1].score;
-	//	if (score != prevScore + 10) return false;
-	//}
-	return true
+	m := map[string]bool{
+		"BubbleSort":    true,
+		"InsertionSort": true,
+		"MergeSort":     true,
+		"BucketSort":    true,
+		"RadixSort":     true,
+		"CountingSort":  true,
+		"QuickSort":     false,
+		"ShellSort":     false,
+		"HeapSort":      false,
+		"SelectionSort": false,
+	}
+	return m[i.Name]
 }

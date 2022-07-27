@@ -7,16 +7,15 @@ import (
 )
 
 func main() {
-	array := tools.Random(10000, 1, 100)
+	array := tools.TailAscOrder(1, 10000, 100)
+	//fmt.Println(array)
 	testSorts(array, //new InsertionSort(),
 		//new InsertionSort2(),
 		//new InsertionSort3(),
 		//new SelectionSort(),
 		//new HeapSort(),
 		//new MergeSort(),
-		new(sort.BubbleSort1),
-		new(sort.BubbleSort2),
-		//new BubbleSort3(),
+		new(sort.BubbleSort),
 		//new QuickSort(),
 		//new ShellSort(),
 		//new CountingSort(),
