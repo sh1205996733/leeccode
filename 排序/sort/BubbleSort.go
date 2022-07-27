@@ -6,13 +6,13 @@ type BubbleSort struct {
 }
 
 func (s *BubbleSort) Sort() {
-	s.bubbleSort0()
+	//s.bubbleSort0()
 	//s.bubbleSort1()
 	//s.bubbleSort2()
-	//s.bubbleSort3()
+	s.bubbleSort3()
 }
 
-//从前面往后面遍历
+//从前面往后面遍历 4-3-2-1
 func (s *BubbleSort) bubbleSort0() {
 	for i := 0; i < len(s.Array)-1; i++ { //array.length-1重复计算
 		for j := 0; j < len(s.Array)-1-i; j++ { //array.length-1重复计算
@@ -23,7 +23,7 @@ func (s *BubbleSort) bubbleSort0() {
 	}
 }
 
-//优化一，从后面往前面遍历
+//优化一，从后面往前面遍历 解决array.length-1重复计算
 func (s *BubbleSort) bubbleSort1() {
 	for end := len(s.Array) - 1; end > 0; end-- { //end从最后一个元素length - 1开始遍历到1
 		for begin := 1; begin <= end; begin++ { //begin从第二个元素arr[1]开始遍历到end
