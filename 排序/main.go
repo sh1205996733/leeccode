@@ -7,15 +7,13 @@ import (
 )
 
 func main() {
-	array := tools.TailAscOrder(1, 10000, 100)
-	//fmt.Println(array)
-	testSorts(array, //new InsertionSort(),
-		//new InsertionSort2(),
-		//new InsertionSort3(),
-		//new SelectionSort(),
+	array := tools.Random(10, 1, 100)
+	testSorts(array,
+		new(sort.SelectionSort),
 		//new HeapSort(),
-		//new MergeSort(),
+		new(sort.MergeSort),
 		new(sort.BubbleSort),
+		new(sort.InsertionSort),
 		//new QuickSort(),
 		//new ShellSort(),
 		//new CountingSort(),
@@ -24,11 +22,12 @@ func main() {
 	)
 }
 func testSorts(array []int, sorts ...sort.Sort) {
-	for _, s := range sorts {
+	for i, s := range sorts {
 		newArray := tools.Copy(array)
 		sort.DoSort(newArray, s)
 		if !tools.IsAscOrder(newArray) {
-			panic("测试未通过")
+			fmt.Printf("case %d 测试未通过\n", i)
+			return
 		}
 	}
 	sort.SortSlice(sorts)

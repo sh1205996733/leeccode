@@ -11,6 +11,7 @@ func Random(count, min, max int) []int {
 	}
 	array := make([]int, count)
 	delta := max - min + 1
+	//rand.Seed(time.Now().UnixMilli())
 	for i := 0; i < count; i++ {
 		array[i] = min + rand.Intn(delta)
 	}

@@ -37,7 +37,11 @@ type Sort interface {
  */
 func (i *BaseSort) cmp(i1, i2 int) int {
 	i.CmpCount++
-	return i.Array[i1] - (i.Array[i2])
+	return i.Array[i1] - i.Array[i2]
+}
+func (i *BaseSort) cmpVal(v1, v2 int) int {
+	i.CmpCount++
+	return v1 - v2
 }
 
 func (i *BaseSort) swap(i1, i2 int) {
