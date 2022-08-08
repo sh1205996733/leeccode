@@ -3,7 +3,7 @@ package linkedlist
 // https://leetcode.cn/problems/swap-nodes-in-pairs/
 // 两两交换链表中的节点
 
-//方法一: 迭代 两两交换值 步长为2 直到下一个为空或者下一个的Next为空结束
+// 方法一: 迭代 两两交换值 步长为2 直到下一个为空或者下一个的Next为空结束
 // 方法一：两两合并 合并两个有序链表(不交换节点)
 // 时间复杂度为 O(n)
 // 空间复杂度：O(1)
@@ -51,7 +51,7 @@ func swapPairs2(head *ListNode) *ListNode {
 	return dummy.Next
 }
 
-//方法二: 递归
+// 方法二: 递归
 // 时间复杂度为 O(n)
 // 空间复杂度：O(1)
 func swapPairs3(head *ListNode) *ListNode {

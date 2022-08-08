@@ -1,6 +1,7 @@
 package linkedlist
 
 import (
+	binarytree "leetcode/二叉树"
 	"testing"
 )
 
@@ -75,15 +76,36 @@ func TestDeleteDuplicates(t *testing.T) {
 
 //  删除排序链表中的重复元素II
 func TestDeleteDuplicatesII(t *testing.T) {
-	l1 := MakeLinkedList([]int{2, 3, 3})
+	l1 := MakeLinkedList([]int{})
 	l3 := deleteDuplicatesII(l1)
 	PrintLinkedList(l3)
 }
 
-//  删除排序链表中的重复元素II
+//  相交链表(两个链表的第一个公共节点)
 func TestGetIntersectionNode(t *testing.T) {
 	l1 := MakeLinkedList([]int{4, 1, 8, 4, 5})
 	l2 := MakeLinkedList([]int{5, 0, 1, 8, 4, 5})
 	l3 := getIntersectionNode(l1, l2)
 	PrintLinkedList(l3)
+}
+
+//  分割链表
+func TestPartition(t *testing.T) {
+	l1 := MakeLinkedList([]int{4, 0, 1, 2})
+	l3 := partition(l1, 3)
+	PrintLinkedList(l3)
+}
+
+//  反转链表II
+func TestReverseBetween(t *testing.T) {
+	l1 := MakeLinkedList([]int{1})
+	l3 := reverseBetween(l1, 1, 1)
+	PrintLinkedList(l3)
+}
+
+//  有序链表转换二叉搜索树
+func TestSortedListToBST(t *testing.T) {
+	l1 := binarytree.MakeLinkedList2([]int{-10, -3, 0, 5, 9})
+	l3 := sortedListToBST(l1)
+	binarytree.PrintLinkedList2(l3)
 }
