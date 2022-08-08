@@ -366,7 +366,7 @@ func (t *levelOrderPrinter) addLineNode(curRow, nextRow list, parent, child *nod
 	}
 
 	// 竖线
-	bottom := initNode("│")
+	bottom := initNode("|")
 	bottom.x = topX
 	bottom.y = parent.y + 1
 	nextRow = append(nextRow, bottom)

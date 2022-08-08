@@ -8,7 +8,7 @@ import "leetcode/二叉树"
 // 方法一 迭代 中序遍历，把每个节点穿起来
 func convertBiNode(root *binarytree.TreeNode) *binarytree.TreeNode {
 	var stack []*binarytree.TreeNode
-	newHead := &binarytree.TreeNode{0, nil, nil}
+	newHead := &binarytree.TreeNode{}
 	node, prev := root, newHead
 	for node != nil || len(stack) > 0 {
 		if node != nil {
@@ -28,7 +28,7 @@ func convertBiNode(root *binarytree.TreeNode) *binarytree.TreeNode {
 
 // 方法二 递归 中序遍历，把每个节点穿起来
 func convertBiNode1(root *binarytree.TreeNode) *binarytree.TreeNode {
-	newHead := &binarytree.TreeNode{0, nil, nil}
+	newHead := &binarytree.TreeNode{}
 	convert(root, newHead)
 	return newHead.Right
 }

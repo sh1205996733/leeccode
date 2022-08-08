@@ -2,6 +2,7 @@ package linkedlist
 
 import (
 	binarytree "leetcode/二叉树"
+	"leetcode/二叉树/printer"
 	"testing"
 )
 
@@ -105,7 +106,21 @@ func TestReverseBetween(t *testing.T) {
 
 //  有序链表转换二叉搜索树
 func TestSortedListToBST(t *testing.T) {
-	l1 := binarytree.MakeLinkedList2([]int{-10, -3, 0, 5, 9})
+	l1 := MakeLinkedList([]int{-10, -3, 0, 5, 9})
 	l3 := sortedListToBST(l1)
+	printer.Println(l3)
+}
+
+//  填充每个节点的下一个右侧节点指针
+func TestConnect(t *testing.T) {
+	l1 := binarytree.MakePerfectBinaryTree([]int{1, 2, 3, 4, 5, 6, 7})
+	l3 := connect(l1)
+	binarytree.PrintLinkedList2(l3)
+}
+
+//  填充每个节点的下一个右侧节点指针II
+func TestConnectII(t *testing.T) {
+	l1 := binarytree.MakePerfectBinaryTree([]int{1, 2, 3, 4, 5, 6, 7})
+	l3 := connectII(l1)
 	binarytree.PrintLinkedList2(l3)
 }
