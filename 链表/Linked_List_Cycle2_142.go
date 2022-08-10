@@ -21,7 +21,7 @@ func detectCycle0(head *ListNode) *ListNode {
 	return nil
 }
 
-// 快慢指针 龟兔赛跑 当发现 \textit{slow}slow 与 \textit{fast}fast 相遇时，我们再额外使用一个指针 \textit{ptr}ptr。起始，它指向链表头部；随后，它和 \textit{slow}slow 每次向后移动一个位置。最终，它们会在入环点相遇
+// 快慢指针 龟兔赛跑 当发现 slow 与 相遇时，我们再额外使用一个指针 ptr。起始，它指向链表头部；随后，它和 slow 每次向后移动一个位置。最终，它们会在入环点相遇
 // 时间复杂度：O(N)
 // 空间复杂度：O(1)
 func detectCycle(head *ListNode) *ListNode {

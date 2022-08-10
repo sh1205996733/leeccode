@@ -152,3 +152,58 @@ func TestReorderList(t *testing.T) {
 	reorderList(l1)
 	PrintLinkedList(l1)
 }
+
+//  对链表进行插入排序
+func TestInsertionSortList(t *testing.T) {
+	l1 := MakeLinkedList([]int{2, 2, 2, 2})
+	PrintLinkedList(insertionSortList(l1))
+}
+
+//  移除链表元素
+func TestRemoveElements(t *testing.T) {
+	l1 := MakeLinkedList([]int{})
+	l3 := removeElements(l1, 0)
+	PrintLinkedList(l3)
+}
+
+//  反转链表
+func TestReverseList(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5})
+	PrintLinkedList(reverseList(l1))
+}
+
+//  删除链表中的节点
+func TestDeleteNode(t *testing.T) {
+	l1 := MakeLinkedList([]int{1})
+	deleteNode(l1)
+	PrintLinkedList(l1)
+}
+
+//  回文链表
+func TestIsPalindrome(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 0, 0, 1})
+	fmt.Println(isPalindrome(l1))
+}
+
+//  奇偶链表
+func TestOddEvenList(t *testing.T) {
+	l1 := MakeLinkedList([]int{1})
+	PrintLinkedList(oddEvenList(l1))
+}
+
+//  分隔链表
+func TestSplitListToParts(t *testing.T) {
+
+	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+	l3 := splitListToParts(l1, 4)
+	for _, v := range l3 {
+		PrintLinkedList(v)
+	}
+}
+
+//  todo
+func Test(t *testing.T) {
+	l1 := MakeLinkedList([]int{1})
+	//todo
+	PrintLinkedList(l1)
+}
