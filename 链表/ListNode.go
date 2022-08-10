@@ -9,16 +9,23 @@ type ListNode struct {
 }
 
 // MakeLinkedList 生成链表
-func MakeLinkedList(nums []int) *ListNode {
+func MakeLinkedList(nums []int, opt ...int) *ListNode {
 	var head, tail *ListNode
-	for _, num := range nums {
+	var cycle *ListNode
+	for i, num := range nums {
 		node := &ListNode{num, nil}
 		if head == nil {
 			head = node
 		} else {
 			tail.Next = node
 		}
+		if len(opt) == 1 && opt[0] == i {
+			cycle = node
+		}
 		tail = node
+	}
+	if cycle != nil {
+		tail.Next = cycle
 	}
 	PrintLinkedList(head)
 	return head

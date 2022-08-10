@@ -1,6 +1,7 @@
 package linkedlist
 
 import (
+	"fmt"
 	binarytree "leetcode/二叉树"
 	"leetcode/二叉树/printer"
 	"testing"
@@ -123,4 +124,31 @@ func TestConnectII(t *testing.T) {
 	l1 := binarytree.MakePerfectBinaryTree([]int{1, 2, 3, 4, 5, 6, 7})
 	l3 := connectII(l1)
 	binarytree.PrintLinkedList2(l3)
+}
+
+//  复制带随机指针的链表
+func TestCopyRandomList(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5, 6, 7})
+	l3 := copyRandomList(l1)
+	PrintLinkedList(l3)
+}
+
+//  环形链表
+func TestHasCycle(t *testing.T) {
+	l1 := MakeLinkedList([]int{3, 2, 0, -4})
+	fmt.Println(hasCycle(l1))
+}
+
+//  环形链表II
+func TestDetectCycle(t *testing.T) {
+	l1 := MakeLinkedList([]int{3, 2, 0, -4})
+	l3 := detectCycle(l1)
+	PrintLinkedList(l3)
+}
+
+//  重排链表
+func TestReorderList(t *testing.T) {
+	l1 := MakeLinkedList([]int{1})
+	reorderList(l1)
+	PrintLinkedList(l1)
 }
