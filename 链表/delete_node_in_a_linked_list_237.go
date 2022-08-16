@@ -1,6 +1,7 @@
 package linkedlist
 
 // https://leetcode.cn/problems/delete-node-in-a-linked-list/
+// https://leetcode.cn/problems/delete-middle-node-lcci/
 // 删除链表中的节点
 
 // 方法一：和下一个节点交换 直接删除 保证需要删除的节点 不是末尾节点

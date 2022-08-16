@@ -1,6 +1,7 @@
 package linkedlist
 
 // https://leetcode.cn/problems/partition-list/
+// https://leetcode.cn/problems/partition-list-lcci/
 // 分隔链表
 
 // 方法一: 迭代 head有可能会改变 所以使用一个虚拟的头节点，然后记录插入点位置tail，找到符合的节点 再插入到tail之后，然后更新一下tail

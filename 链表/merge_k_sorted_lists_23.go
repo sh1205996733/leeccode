@@ -1,6 +1,7 @@
 package linkedlist
 
 // https://leetcode.cn/problems/merge-k-sorted-lists/
+// https://leetcode.cn/problems/vvXgSW/
 // 合并K个升序链表
 
 // 方法一：两两合并 合并两个有序链表

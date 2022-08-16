@@ -1,6 +1,7 @@
 package linkedlist
 
 // https://leetcode.cn/problems/reorder-list/
+// https://leetcode.cn/problems/LGjMqU/submissions/
 // 重排链表
 
 // 先找到中间节点mid 从中间节点mid开始反转获取新的newHead，然后将newHead节点插入到head知道mid时接结束，返回原head

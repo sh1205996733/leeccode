@@ -3,6 +3,7 @@ package linkedlist
 import "fmt"
 
 // https://leetcode.cn/problems/add-two-numbers/
+// https://leetcode.cn/problems/sum-lists-lcci/
 // eg:l1 = [2,4,3], l2 = [5,6,4] [7,0,8] 342 + 465 = 807
 
 //方法一: 暴力法 将l1和l2转化成整数,在将结果转成链表,再相加但结果会溢出

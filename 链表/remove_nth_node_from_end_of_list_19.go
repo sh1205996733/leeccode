@@ -56,6 +56,7 @@ func removeNthFromEnd1(head *ListNode, n int) *ListNode {
 }
 
 // https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/submissions/
+// https://leetcode.cn/problems/SLwz0R/
 // 剑指 Offer 22. 链表中倒数第k个节点
 func getKthFromEnd(head *ListNode, k int) *ListNode {
 	fast := head

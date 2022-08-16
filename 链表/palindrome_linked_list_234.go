@@ -1,6 +1,8 @@
 package linkedlist
 
 // https://leetcode.cn/problems/palindrome-linked-list/
+// https://leetcode.cn/problems/palindrome-linked-list-lcci/submissions/
+// https://leetcode.cn/problems/aMhZSa/
 // 回文链表
 
 // 方法一：迭代 找中间节点mid，从mid处还是反转 然后比较

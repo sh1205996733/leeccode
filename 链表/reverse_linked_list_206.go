@@ -2,6 +2,7 @@ package linkedlist
 
 // https://leetcode.cn/problems/reverse-linked-list/
 // https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/
+// https://leetcode.cn/problems/UHnkqh/submissions/
 // 反转链表
 
 // 方法一：迭代 头插法

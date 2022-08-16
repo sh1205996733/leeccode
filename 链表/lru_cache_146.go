@@ -2,6 +2,7 @@ package linkedlist
 
 // https://leetcode.cn/problems/lru-cache
 // https://leetcode.cn/problems/lru-cache-lcci/
+// https://leetcode.cn/problems/OrIXps/
 // LRU 缓存
 
 type LRUCache struct {
