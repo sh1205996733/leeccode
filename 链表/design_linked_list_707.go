@@ -4,13 +4,13 @@ package linkedlist
 // 设计链表
 
 type MyLinkedList struct {
-	dammyHead *ListNode
+	dummyHead *ListNode
 	tail      *ListNode
 	size      int
 }
 
 func ConstructorMyLinkedList() MyLinkedList {
-	return MyLinkedList{dammyHead: &ListNode{}, size: 0}
+	return MyLinkedList{dummyHead: &ListNode{}, size: 0}
 }
 
 func (this *MyLinkedList) Get(index int) int {
@@ -34,7 +34,7 @@ func (this *MyLinkedList) AddAtIndex(index int, val int) {
 		return
 	}
 	if index <= 0 {
-		this.dammyHead.Next = &ListNode{val, this.dammyHead.Next}
+		this.dummyHead.Next = &ListNode{val, this.dummyHead.Next}
 	} else {
 		prev := this.node(index - 1)
 		prev.Next = &ListNode{val, prev.Next}
@@ -47,7 +47,7 @@ func (this *MyLinkedList) DeleteAtIndex(index int) {
 		return
 	}
 	if index <= 0 {
-		this.dammyHead.Next = this.dammyHead.Next.Next
+		this.dummyHead.Next = this.dummyHead.Next.Next
 	} else {
 		prev := this.node(index - 1)
 		prev.Next = prev.Next.Next
@@ -59,7 +59,7 @@ func (this *MyLinkedList) node(index int) *ListNode {
 	if index < 0 || index >= this.size {
 		return nil
 	}
-	p := this.dammyHead
+	p := this.dummyHead
 	for i := 0; i <= index; i++ {
 		p = p.Next
 	}

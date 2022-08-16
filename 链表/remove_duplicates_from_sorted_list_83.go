@@ -31,3 +31,18 @@ func deleteDuplicates(head *ListNode) *ListNode {
 	}
 	return head
 }
+
+// https://leetcode.cn/problems/remove-duplicate-node-lcci/
+func removeDuplicateNodes(head *ListNode) *ListNode {
+	m := make(map[int]*ListNode, 0)
+	prev := &ListNode{Next: head}
+	for cur := head; cur != nil; cur = cur.Next {
+		if _, ok := m[cur.Val]; ok {
+			prev.Next = cur.Next
+		} else {
+			m[cur.Val] = cur
+			prev = cur
+		}
+	}
+	return head
+}

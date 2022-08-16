@@ -1,20 +1,21 @@
 package linkedlist
 
 // https://leetcode.cn/problems/reverse-linked-list/
+// https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/
 // 反转链表
 
 // 方法一：迭代 头插法
 // 时间复杂度：O(N)
 // 空间复杂度：O(1)
 func reverseList0(head *ListNode) *ListNode {
-	dammyHead := &ListNode{}
+	dummyHead := &ListNode{}
 	for head != nil {
 		next := head.Next
-		head.Next = dammyHead.Next
-		dammyHead.Next = head
+		head.Next = dummyHead.Next
+		dummyHead.Next = head
 		head = next
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }
 
 // 方法二：递归

@@ -7,8 +7,8 @@ package linkedlist
 // 时间复杂度为 O(n)
 // 空间复杂度：O(1)
 func reverseBetween(head *ListNode, left int, right int) *ListNode {
-	dammyHead := &ListNode{0, head}
-	cur := dammyHead
+	dummyHead := &ListNode{0, head}
+	cur := dummyHead
 	prev := cur
 	for i := 0; i < right; i++ {
 		if i < left {
@@ -21,5 +21,5 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 		next.Next = prev.Next
 		prev.Next = next
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }

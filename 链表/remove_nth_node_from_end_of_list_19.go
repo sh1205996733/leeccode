@@ -54,3 +54,18 @@ func removeNthFromEnd1(head *ListNode, n int) *ListNode {
 	slow.Next = slow.Next.Next
 	return dummy.Next
 }
+
+// https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/submissions/
+// 剑指 Offer 22. 链表中倒数第k个节点
+func getKthFromEnd(head *ListNode, k int) *ListNode {
+	fast := head
+	for i := 0; i < k; i++ {
+		fast = fast.Next
+	}
+	slow := head
+	for fast != nil {
+		fast = fast.Next
+		slow = slow.Next
+	}
+	return slow
+}

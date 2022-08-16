@@ -7,11 +7,11 @@ package linkedlist
 // 时间复杂度：O(N^2)
 // 空间复杂度：O(1)
 func removeZeroSumSublists0(head *ListNode) *ListNode {
-	dammyHead := &ListNode{Next: head}
+	dummyHead := &ListNode{Next: head}
 	sum := 0
 	node := head
 	for cur := head; cur != nil; cur = cur.Next {
-		prev := dammyHead
+		prev := dummyHead
 		sum += cur.Val
 		if sum != 0 {
 			node = prev.Next
@@ -30,24 +30,24 @@ func removeZeroSumSublists0(head *ListNode) *ListNode {
 			prev.Next = cur.Next
 		}
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }
 
 // 方法二：两个map
 // 时间复杂度：O(N)
 // 空间复杂度：O(N)
 func removeZeroSumSublists(head *ListNode) *ListNode {
-	dammyHead := &ListNode{Next: head}
+	dummyHead := &ListNode{Next: head}
 	m1 := map[int]*ListNode{}
 	sum := 0
-	for p := dammyHead; p != nil; p = p.Next {
+	for p := dummyHead; p != nil; p = p.Next {
 		sum += p.Val
 		m1[sum] = p
 	}
 	sum2 := 0
-	for p := dammyHead; p != nil; p = p.Next {
+	for p := dummyHead; p != nil; p = p.Next {
 		sum2 += p.Val
 		p.Next = m1[sum2].Next
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }

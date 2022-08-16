@@ -17,11 +17,11 @@ type LinkedNode struct {
 
 func ConstructorCache(capacity int) LRUCache {
 	m := make(map[int]*LinkedNode, capacity)
-	dammyHead := new(LinkedNode)
+	dummyHead := new(LinkedNode)
 	dammyTail := new(LinkedNode)
-	dammyTail.prev = dammyHead
-	dammyHead.next = dammyTail
-	return LRUCache{m, capacity, 0, dammyHead, dammyTail}
+	dammyTail.prev = dummyHead
+	dummyHead.next = dammyTail
+	return LRUCache{m, capacity, 0, dummyHead, dammyTail}
 }
 func (r *LRUCache) Get(key int) int {
 	cur, ok := r.cache[key]

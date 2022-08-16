@@ -1,6 +1,7 @@
 package linkedlist
 
 // https://leetcode.cn/problems/merge-two-sorted-lists/
+// https://leetcode.cn/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/submissions/
 // 合并两个有序链表
 
 // 方法一：栈 双指针，比较俩指针大小，小的指针加入新的新的节点，向前挪 直到有一个指针走完，把另一个指针剩余部分都加到新的节点后面

@@ -15,16 +15,16 @@ func isPalindrome(head *ListNode) bool {
 		mid = mid.Next
 		fast = fast.Next.Next
 	}
-	dammyHead := &ListNode{}
+	dummyHead := &ListNode{}
 	node := mid.Next
 	mid.Next = nil
 	for node != nil {
 		next := node.Next
-		node.Next = dammyHead.Next
-		dammyHead.Next = node
+		node.Next = dummyHead.Next
+		dummyHead.Next = node
 		node = next
 	}
-	newHead := dammyHead.Next
+	newHead := dummyHead.Next
 	for newHead != nil {
 		if head.Val != newHead.Val {
 			return false

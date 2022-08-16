@@ -7,15 +7,15 @@ package linkedlist
 // 时间复杂度：O(N)
 // 空间复杂度：O(1)
 func removeElements0(head *ListNode, val int) *ListNode {
-	dammyHead := &ListNode{-1, head}
-	for node := dammyHead; node.Next != nil; {
+	dummyHead := &ListNode{-1, head}
+	for node := dummyHead; node.Next != nil; {
 		if node.Next.Val == val {
 			node.Next = node.Next.Next
 		} else {
 			node = node.Next
 		}
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }
 
 // 方法二：递归

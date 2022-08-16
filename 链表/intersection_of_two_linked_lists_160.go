@@ -1,6 +1,7 @@
 package linkedlist
 
 // https://leetcode.cn/problems/intersection-of-two-linked-lists/
+// https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/
 // 相交链表(两个链表的第一个公共节点)
 
 //方法一 :迭代 先求出长度 在将长的移动max-min 在同时开始遍历两个链表

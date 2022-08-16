@@ -7,9 +7,9 @@ package linkedlist
 // 时间复杂度为 O(n)
 // 空间复杂度：O(1)
 func partition0(head *ListNode, x int) *ListNode {
-	dammyHead := &ListNode{-101, head}
-	head = dammyHead
-	for cur := dammyHead; cur != nil && cur.Next != nil; cur = cur.Next {
+	dummyHead := &ListNode{-101, head}
+	head = dummyHead
+	for cur := dummyHead; cur != nil && cur.Next != nil; cur = cur.Next {
 		for next := cur.Next; next != nil && next.Val < x; next = cur.Next {
 			cur.Next = next.Next
 			if cur == head {
@@ -21,7 +21,7 @@ func partition0(head *ListNode, x int) *ListNode {
 		}
 
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }
 
 // 直观来说我们只需维护两个链表 small 和 large 即可，small 链表按顺序存储所有小于 xx 的节点，large 链表按顺序存储所有大于等于 xx 的节点。

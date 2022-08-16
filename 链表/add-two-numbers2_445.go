@@ -43,21 +43,21 @@ func addTwoNumbersII0(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 func reserve(head *ListNode) *ListNode {
-	dammyHead := &ListNode{}
+	dummyHead := &ListNode{}
 	for head != nil {
 		next := head.Next
-		head.Next = dammyHead.Next
-		dammyHead.Next = head
+		head.Next = dummyHead.Next
+		dummyHead.Next = head
 		head = next
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }
 
 // 方法二：栈 三个栈
 // 时间复杂度：O(N)
 // 空间复杂度：O(N)
 func addTwoNumbersII(l1 *ListNode, l2 *ListNode) *ListNode {
-	dammyHead := &ListNode{}
+	dummyHead := &ListNode{}
 	var stack1, stack2 []int
 	for ; l1 != nil; l1 = l1.Next {
 		stack1 = append(stack1, l1.Val)
@@ -78,11 +78,11 @@ func addTwoNumbersII(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		sum = val1 + val2 + carry
 		carry = sum / 10
-		dammyHead.Next = &ListNode{sum % 10, dammyHead.Next}
+		dummyHead.Next = &ListNode{sum % 10, dummyHead.Next}
 	}
 	// 最后还要判断一下进位carry
 	if carry > 0 {
-		dammyHead.Next = &ListNode{carry, dammyHead.Next}
+		dummyHead.Next = &ListNode{carry, dummyHead.Next}
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }

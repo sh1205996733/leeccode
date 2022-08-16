@@ -7,8 +7,8 @@ package linkedlist
 // 时间复杂度为 O(n)
 // 空间复杂度：O(1)
 func deleteDuplicatesII(head *ListNode) *ListNode {
-	dammyHead := &ListNode{101, head}
-	prev := dammyHead
+	dummyHead := &ListNode{101, head}
+	prev := dummyHead
 	cur := head
 	for cur != nil {
 		next := cur.Next
@@ -21,7 +21,7 @@ func deleteDuplicatesII(head *ListNode) *ListNode {
 		}
 		cur = next
 	}
-	return dammyHead.Next
+	return dummyHead.Next
 }
 
 // 方法二: 递归
