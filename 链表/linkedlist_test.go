@@ -128,9 +128,9 @@ func TestConnectII(t *testing.T) {
 
 //  复制带随机指针的链表
 func TestCopyRandomList(t *testing.T) {
-	l1 := MakeLinkedList([]int{1, 2, 3, 4, 5, 6, 7})
-	l3 := copyRandomList(l1)
-	PrintLinkedList(l3)
+	//l1 := MakeLinkedList([]int{1, 2, 3, 4, 5, 6, 7})
+	//l3 := copyRandomList(l1)
+	//PrintLinkedList(l3)
 }
 
 //  环形链表
@@ -199,6 +199,54 @@ func TestSplitListToParts(t *testing.T) {
 	for _, v := range l3 {
 		PrintLinkedList(v)
 	}
+}
+
+//  链表随机节点
+func TestSolution(t *testing.T) {
+	l1 := MakeLinkedList([]int{1})
+	obj := ConstructorSolution(l1)
+	fmt.Println(obj.GetRandom())
+	fmt.Println(obj.GetRandom())
+	fmt.Println(obj.GetRandom())
+	fmt.Println(obj.GetRandom())
+	fmt.Println(obj.GetRandom())
+}
+
+//  链表中的下一个更大节点
+func TestNextLargerNodes(t *testing.T) {
+	l1 := MakeLinkedList([]int{9, 7, 6, 7, 6, 9})
+	fmt.Println(nextLargerNodes(l1))
+}
+
+//  两数相加II
+func TestAddTwoNumbersII(t *testing.T) {
+	l1 := MakeLinkedList([]int{7, 2, 4, 3})
+	l2 := MakeLinkedList([]int{5, 6, 4})
+	PrintLinkedList(addTwoNumbersII(l1, l2))
+}
+
+//  从链表中删去总和值为零的连续节点
+func TestRemoveZeroSumSublists(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 2, -103, 4, -4, -3, 2, 1})
+	PrintLinkedList(removeZeroSumSublists(l1))
+}
+
+//  链表组件
+func TestNumComponents(t *testing.T) {
+	l1 := MakeLinkedList([]int{0, 1, 2, 4, 3})
+	fmt.Println(numComponents(l1, []int{0, 1, 3}))
+}
+
+//  单链表加1
+func TestPlusOne(t *testing.T) {
+	l1 := MakeLinkedList([]int{9, 9, 9})
+	PrintLinkedList(plusOne(l1))
+}
+
+//  二进制链表转整数
+func TestGetDecimalValue(t *testing.T) {
+	l1 := MakeLinkedList([]int{1, 0, 1, 1, 0})
+	fmt.Println(getDecimalValue(l1))
 }
 
 //  todo

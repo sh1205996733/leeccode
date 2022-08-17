@@ -4,12 +4,6 @@ package linkedlist
 // 复制带随机指针的链表
 var cachedNode map[*Node]*Node
 
-type Node struct {
-	Val    int
-	Next   *Node
-	Random *Node
-}
-
 func deepCopy(node *Node) *Node {
 	if node == nil {
 		return nil

@@ -7,6 +7,13 @@ type ListNode struct {
 	Val  int
 	Next *ListNode
 }
+type Node struct {
+	Val    int
+	Prev   *Node
+	Next   *Node
+	Child  *Node
+	Random *Node
+}
 
 // MakeLinkedList 生成链表
 func MakeLinkedList(nums []int, opt ...int) *ListNode {
