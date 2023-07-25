@@ -36,3 +36,9 @@ func TestGenerateParenthesis(t *testing.T) {
 	ret := generateParenthesis(2)
 	fmt.Println(ret)
 }
+
+// 电话号码的字母组合
+func TestLetterCombinations(t *testing.T) {
+	ret := letterCombinations("9")
+	fmt.Println(ret)
+}
