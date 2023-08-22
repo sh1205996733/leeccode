@@ -1,13 +1,11 @@
-package main
+package array
 
-func main() {
-	nums1 := []int{1, 2, 3, 0, 0, 0}
-	m := 3
-	nums2 := []int{2, 5, 6}
-	n := 3
-	merge(nums1, m, nums2, n)
-}
+// 合并两个有序数组
+// https://leetcode.cn/problems/merge-sorted-array/
 
+// 方法一：遍历
+// 时间复杂度：O(n)
+// 空间复杂度：O(1)
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	i := m - 1
 	j := n - 1

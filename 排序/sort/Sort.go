@@ -23,6 +23,7 @@ func DoSort(array []int, sort Sort) {
 	f.FieldByName("Array").Set(reflect.ValueOf(array))
 	begin := time.Now()
 	sort.Sort()
+	fmt.Println("["+f.Type().Name()+"]	排序后:", array)
 	f.FieldByName("Time").SetInt(time.Since(begin).Milliseconds())
 }
 

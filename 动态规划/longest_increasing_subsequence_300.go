@@ -1,30 +1,24 @@
-package main
+package dp
 
-import "fmt"
-
-func main() {
-	nums := []int{10, 2, 2, 5, 1, 7, 101, 18}
-	fmt.Println(lengthOfLIS(nums))
-}
-
+// 10,9,2,5,3,7,101,18
 func lengthOfLIS(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
 	}
 	size := 0
-	top := make([]int, len(nums))
+	heap := make([]int, len(nums))
 	for _, num := range nums {
 		begin := 0
 		end := size
 		for begin < end { //遍历所有牌堆的牌顶
 			mid := (begin + end) >> 1
-			if top[mid] >= num { //mid左边
+			if heap[mid] >= num { //mid左边
 				end = mid
 			} else {
 				begin = mid + 1
 			}
 		}
-		top[begin] = num
+		heap[begin] = num
 		if begin == size {
 			size++
 		}
@@ -32,6 +26,7 @@ func lengthOfLIS(nums []int) int {
 	}
 	return size
 }
+
 func lengthOfLIS2(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0

@@ -9,12 +9,12 @@ import (
 func main() {
 	array := tools.Random(10, 1, 100)
 	testSorts(array,
+		new(sort.BubbleSort),
 		new(sort.SelectionSort),
 		//new HeapSort(),
 		new(sort.MergeSort),
-		new(sort.BubbleSort),
 		new(sort.InsertionSort),
-		//new QuickSort(),
+		//new(sort.QuickSort),
 		//new ShellSort(),
 		//new CountingSort(),
 		//new RadixSort(),
@@ -22,6 +22,7 @@ func main() {
 	)
 }
 func testSorts(array []int, sorts ...sort.Sort) {
+	fmt.Println("排序前:", array)
 	for i, s := range sorts {
 		newArray := tools.Copy(array)
 		sort.DoSort(newArray, s)

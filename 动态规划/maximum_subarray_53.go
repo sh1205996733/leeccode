@@ -1,41 +1,17 @@
-package main
+package dp
 
 import (
 	"fmt"
 	"math"
 )
 
-func main() {
-	nums := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
-	fmt.Println(maxSubArray(nums))
-}
+// https://leetcode.cn/problems/maximum-subarray/
 
-//动态规划
-func maxSubArray(nums []int) interface{} {
-	if nums == nil || len(nums) == 0 {
-		return 0
-	}
-	dp := nums[0]
-	begin, end := 0, 0
-	max := dp
-	for i := 1; i < len(nums); i++ {
-		if dp > 0 {
-			dp = dp + nums[i]
-		} else {
-			dp = nums[i]
-			begin = i
-		}
-		if dp > max {
-			max = dp
-			end = i
-		}
-	}
-	fmt.Println(begin, end, nums[begin:end+1])
-	return max
-}
-
-//分治
-func maxSubArray1(nums []int) int {
+// 方法一: 递归
+// 时间复杂度：O(n)
+// 空间复杂度：O(n)
+// 分治
+func maxSubArray(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
 	}
@@ -64,4 +40,28 @@ func maxArray(nums []int, begin int, end int) int {
 		}
 	}
 	return int(math.Max(float64(leftMax+rightMax), math.Max(float64(maxArray(nums, begin, mid)), float64(maxArray(nums, mid, end)))))
+}
+
+// 动态规划
+func maxSubArray0(nums []int) interface{} {
+	if nums == nil || len(nums) == 0 {
+		return 0
+	}
+	dp := nums[0]
+	begin, end := 0, 0
+	max := dp
+	for i := 1; i < len(nums); i++ {
+		if dp > 0 {
+			dp = dp + nums[i]
+		} else {
+			dp = nums[i]
+			begin = i
+		}
+		if dp > max {
+			max = dp
+			end = i
+		}
+	}
+	fmt.Println(begin, end, nums[begin:end+1])
+	return max
 }
