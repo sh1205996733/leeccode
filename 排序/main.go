@@ -11,14 +11,14 @@ func main() {
 	testSorts(array,
 		new(sort.BubbleSort),
 		new(sort.SelectionSort),
-		//new HeapSort(),
+		new(sort.HeapSort),
 		new(sort.MergeSort),
 		new(sort.InsertionSort),
-		//new(sort.QuickSort),
-		//new ShellSort(),
-		//new CountingSort(),
-		//new RadixSort(),
-		//new BucketSort()
+		new(sort.QuickSort),
+		new(sort.ShellSort),
+		new(sort.CountingSort),
+		new(sort.RadixSort),
+		new(sort.BucketSort),
 	)
 }
 func testSorts(array []int, sorts ...sort.Sort) {

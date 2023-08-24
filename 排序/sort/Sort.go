@@ -80,8 +80,10 @@ func (i *BaseSort) String() string {
 	compareCountStr := "比较：" + numberString(i.CmpCount)
 	swapCountStr := "交换：" + numberString(i.SwapCount)
 	stableStr := fmt.Sprintf("稳定性：%v", i.isStable())
+	inPlaceStr := fmt.Sprintf("原地算法：%v", i.isInPlace())
 	return "【" + i.Name + "】\n" +
 		stableStr + " \t" +
+		inPlaceStr + " \t" +
 		timeStr + " \t" +
 		compareCountStr + "\t " +
 		swapCountStr + "\n" +
@@ -101,15 +103,31 @@ func numberString(number int) string {
 func (i *BaseSort) isStable() bool {
 	m := map[string]bool{
 		"BubbleSort":    true,
+		"SelectionSort": false,
 		"InsertionSort": true,
 		"MergeSort":     true,
-		"BucketSort":    true,
-		"RadixSort":     true,
-		"CountingSort":  true,
 		"QuickSort":     false,
 		"ShellSort":     false,
 		"HeapSort":      false,
-		"SelectionSort": false,
+		"BucketSort":    true,
+		"RadixSort":     true,
+		"CountingSort":  true,
+	}
+	return m[i.Name]
+}
+
+func (i *BaseSort) isInPlace() bool {
+	m := map[string]bool{
+		"BubbleSort":    true,
+		"InsertionSort": true,
+		"SelectionSort": true,
+		"MergeSort":     false,
+		"QuickSort":     true,
+		"ShellSort":     true,
+		"HeapSort":      true,
+		"BucketSort":    false,
+		"RadixSort":     false,
+		"CountingSort":  false,
 	}
 	return m[i.Name]
 }
