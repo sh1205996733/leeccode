@@ -66,3 +66,13 @@ func TestPlusOne(t *testing.T) {
 	digits := []int{0}
 	fmt.Println(plusOne(digits))
 }
+
+func TestMissingNumber(t *testing.T) {
+	digits := []int{9, 6, 4, 2, 3, 5, 7, 0, 1}
+	fmt.Println(missingNumber(digits))
+}
+
+func TestSingleNumber(t *testing.T) {
+	digits := []int{4, 1, 2, 1, 2}
+	fmt.Println(singleNumber(digits))
+}
