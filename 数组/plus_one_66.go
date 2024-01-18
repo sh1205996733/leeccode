@@ -1,12 +1,9 @@
-package main
+package array
 
-import "fmt"
+// 加一
+// https://leetcode.cn/problems/plus-one/description/
 
-func main() {
-	digits := []int{0}
-	fmt.Println(plusOne(digits))
-}
-
+// [1,2,3]-->[1,2,4] [9,9]-->[1,0,0]
 func plusOne(digits []int) []int {
 	index := len(digits) - 1
 	for index >= 0 && digits[index] == 9 { //循环

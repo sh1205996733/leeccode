@@ -1,13 +1,9 @@
-package main
+package dp
 
-import "fmt"
+// 爬楼梯
+// https://leetcode.cn/problems/climbing-stairs/description/
 
-func main() {
-	fmt.Println(climbStairs1(45))
-	fmt.Println(climbStairs2(45))
-}
-
-func climbStairs1(n int) int {
+func climbStairs(n int) int {
 	m := make(map[int]int)
 	m[0] = 1
 	for i := 1; i <= n; i++ {
@@ -24,16 +20,6 @@ func climbStairs0(n int) int {
 }
 
 func climbStairs2(n int) int {
-	p, q, r := 0, 0, 1
-	for i := 1; i <= n; i++ {
-		p = q
-		q = r
-		r = p + q
-	}
-	return r
-}
-
-func climbStairs3(n int) int {
 	p, q, r := 0, 0, 1
 	for i := 1; i <= n; i++ {
 		p = q

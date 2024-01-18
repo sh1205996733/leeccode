@@ -35,22 +35,7 @@ func TestLengthOfLIS(t *testing.T) {
 func TestFindMedianSortedArrays(t *testing.T) {
 	nums := []int{1, 3}
 	nums2 := []int{2, 4, 5}
-	fmt.Println(findMedianSortedArrays000(nums, nums2))
-}
-func findMedianSortedArrays000(nums1 []int, nums2 []int) []int {
-	len1, len2 := len(nums1), len(nums2)
-	newArray := make([]int, len1+len2)
-	li, ri := 0, 0
-	for cur := 0; cur < len(newArray); cur++ {
-		if li < len1 && nums1[li] < nums2[ri] {
-			newArray[cur] = nums1[li]
-			li++
-		} else { // li == len1 || nums1[li] >= nums2[ri]
-			newArray[cur] = nums2[ri]
-			ri++
-		}
-	}
-	return newArray
+	fmt.Println(findMedianSortedArrays(nums, nums2))
 }
 
 // 寻找峰值

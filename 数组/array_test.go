@@ -51,3 +51,18 @@ func TestMerge(t *testing.T) {
 	n := 3
 	merge(nums1, m, nums2, n)
 }
+
+func TestFourSum(t *testing.T) {
+	nums := []int{1, 0, -1, 0, -2, 2}
+	fmt.Println(fourSum(nums, 0))
+}
+
+func TestFourSumCount(t *testing.T) {
+	nums1, nums2, nums3, nums4 := []int{1, 2}, []int{-2, -1}, []int{-1, 2}, []int{0, 2}
+	fmt.Println(fourSumCount(nums1, nums2, nums3, nums4))
+}
+
+func TestPlusOne(t *testing.T) {
+	digits := []int{0}
+	fmt.Println(plusOne(digits))
+}

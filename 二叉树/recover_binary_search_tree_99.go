@@ -1,25 +1,18 @@
-package main
+package binarytree
 
 import (
 	"container/list"
 	"math"
 )
 
-func main() {
-	recoverTree(nil)
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+// 恢复二叉搜索树
+// https://leetcode.cn/problems/recover-binary-search-tree/description/
 
 func recoverTree(root *TreeNode) {
 	stack := list.New()
 	var first, second *TreeNode
 	node := root
-	min := &TreeNode{math.MinInt64, nil, nil}
+	min := &TreeNode{Val: math.MinInt64, Left: nil, Right: nil}
 	for node != nil || stack.Len() > 0 {
 		if node != nil {
 			stack.PushBack(node)

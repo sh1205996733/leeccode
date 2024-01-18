@@ -47,14 +47,16 @@ func backTrack(nums, path []int, visited []bool, depth int, ret *[][]int) {
 		return
 	}
 	for i := 0; i < len(nums); i++ { //每次把每个元素都访问一遍
-		if !visited[i] { //没有访问过 就加入到path 并将该位置标记为visited,然后进行下一位置递归 最后再将该位置设置false 并移除path
-			path = append(path, nums[i])
-			visited[i] = true
-			backTrack(nums, path, visited, depth+1, ret)
-			//回溯 将访问过的元素置为 未访问的
-			visited[i] = false
-			path = path[:len(path)-1]
+		if visited[i] {
+			continue
 		}
+		// 没有访问过 就加入到path 并将该位置标记为visited,然后进行下一位置递归 最后再将该位置设置false 并移除path
+		path = append(path, nums[i])
+		visited[i] = true
+		backTrack(nums, path, visited, depth+1, ret)
+		//回溯 将访问过的元素置为 未访问的
+		visited[i] = false
+		path = path[:len(path)-1]
 	}
 }
 

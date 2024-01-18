@@ -16,7 +16,7 @@ func TestPermute(t *testing.T) {
 
 // 全排列II
 func TestPermuteUnique(t *testing.T) {
-	ret := permuteUnique([]int{1, 1, 2, 2})
+	ret := permuteUnique([]int{1, 1, 2})
 	for _, r := range ret {
 		fmt.Println(r)
 	}

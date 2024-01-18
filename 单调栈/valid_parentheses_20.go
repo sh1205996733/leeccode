@@ -1,14 +1,9 @@
-package main
+package monotonicstack
 
-import (
-	"container/list"
-	"fmt"
-)
+import "container/list"
 
-func main() {
-	str := "()"
-	fmt.Println(isValid2(str))
-}
+// 有效的括号
+// https://leetcode.cn/problems/valid-parentheses/description/
 
 var map1 = map[rune]int{
 	'(': -1,
@@ -18,13 +13,9 @@ var map1 = map[rune]int{
 	'{': -3,
 	'}': 3,
 }
-var map2 = map[rune]rune{
-	'(': ')',
-	'[': ']',
-	'{': '}',
-}
 
-func isValid(s string) bool {
+// ()[]{}  (] (((())))[[{}]]
+func isValid0(s string) bool {
 	stack := list.New()
 	for _, c := range s {
 		if map1[c] < 0 {
@@ -37,7 +28,14 @@ func isValid(s string) bool {
 	}
 	return stack.Len() == 0
 }
-func isValid2(s string) bool {
+
+var map2 = map[rune]rune{
+	'(': ')',
+	'[': ']',
+	'{': '}',
+}
+
+func isValid(s string) bool {
 	stack := make([]rune, 0)
 	for _, c := range s {
 		if _, ok := map2[c]; ok {
