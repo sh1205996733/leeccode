@@ -2,6 +2,7 @@ package binarytree
 
 import (
 	"fmt"
+	"leetcode/二叉树/printer"
 	"testing"
 )
 
@@ -18,4 +19,54 @@ func TestIsValidBST(t *testing.T) {
 func TestRecoverTree(t *testing.T) {
 	root := &TreeNode{Val: 10, Left: &TreeNode{Val: 5}, Right: &TreeNode{Val: 25}}
 	recoverTree(root)
+}
+
+func TestIsSymmetric(t *testing.T) {
+	nums := []any{1, 2, 2, 3, 4, 4, 3}
+	//nums := []any{1, 2, 2, nil, 3, nil, 3}
+	root := MakePerfectBinaryTree(nums)
+	fmt.Println(isSymmetric(root))
+}
+
+func TestLevelOrder(t *testing.T) {
+	nums := []any{1, 2, 2, 3, 4, 4, 3}
+	root := MakePerfectBinaryTree(nums)
+	fmt.Println(levelOrder(root))
+}
+
+func TestLevelOrderBottom(t *testing.T) {
+	nums := []any{1, 2, 2, 3, 4, 4, 3}
+	root := MakePerfectBinaryTree(nums)
+	fmt.Println(levelOrderBottom(root))
+}
+
+func TestMaxDepth(t *testing.T) {
+	nums := []any{1, 2, 2, nil, 3, nil, 3, nil, nil, 1}
+	root := MakePerfectBinaryTree(nums)
+	fmt.Println(maxDepth(root))
+}
+
+func TestBuildTree(t *testing.T) {
+	preorder := []int{3, 9, 1, 10, 20, 15, 7}
+	inorder := []int{1, 9, 10, 3, 15, 20, 7}
+	MakePerfectBinaryTree([]any{3, 9, 20, 1, 10, 15, 7})
+	printer.Println(buildTree(preorder, inorder))
+}
+
+func TestSortedArrayToBST(t *testing.T) {
+	nums := []int{-10}
+	printer.Println(sortedArrayToBST(nums))
+}
+
+func TestIsBalanced(t *testing.T) {
+	nums := []any{3, 9, 20, nil, nil, 15, 7}
+	root := MakePerfectBinaryTree(nums)
+	fmt.Println(isBalanced(root))
+}
+
+func TestFlatten(t *testing.T) {
+	nums := []any{1, 2, 5, 3, 4, nil, 6}
+	root := MakePerfectBinaryTree(nums)
+	flatten(root)
+	printer.Println(root)
 }

@@ -76,3 +76,22 @@ func TestSingleNumber(t *testing.T) {
 	digits := []int{4, 1, 2, 1, 2}
 	fmt.Println(singleNumber(digits))
 }
+
+func TestIntersect(t *testing.T) {
+	nums1 := []int{4, 1, 2, 1, 2}
+	nums2 := []int{2, 2}
+	fmt.Println(intersect(nums1, nums2))
+}
+
+func TestFindMissingRanges(t *testing.T) {
+	nums := []int{1, 2, 4, 8, 9}
+	fmt.Println(findMissingRanges(nums, 0, 10))
+}
+
+func TestGenerate(t *testing.T) {
+	fmt.Println(generate(5))
+}
+
+func TestGenerateII(t *testing.T) {
+	fmt.Println(getRow(4))
+}

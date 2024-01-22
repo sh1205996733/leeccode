@@ -31,3 +31,9 @@ func TestLengthOfLastWord(t *testing.T) {
 	str := "luffy is still joyboy"
 	fmt.Println(lengthOfLastWord(str))
 }
+
+func TestReverseString(t *testing.T) {
+	b := []byte("luffy")
+	reverseString(b)
+	fmt.Println(string(b))
+}

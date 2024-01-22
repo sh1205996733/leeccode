@@ -1,14 +1,10 @@
-package main
+package binarytree
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+// 从中序与后序遍历序列构造二叉树
+// https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
 
-//中序遍历 inorder = [9,3,15,20,7]
-//后序遍历 postorder = [9,15,7,20,3]
-func buildTree(inorder []int, postorder []int) *TreeNode {
+// 方法一:递归
+func buildTree2(inorder []int, postorder []int) *TreeNode {
 	if len(postorder) == 0 || len(inorder) == 0 {
 		return nil
 	}

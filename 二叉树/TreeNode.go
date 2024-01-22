@@ -67,21 +67,25 @@ func PrintLinkedList2(node *TreeNode) {
 }
 
 // MakePerfectBinaryTree 完美二叉树
-func MakePerfectBinaryTree(nums []int) *TreeNode {
+func MakePerfectBinaryTree(nums []any) *TreeNode {
 	if len(nums) == 0 {
 		return nil
 	}
 	var root *TreeNode
 	m := map[int]*TreeNode{}
 	for i, num := range nums {
-		m[i] = &TreeNode{Val: num}
+		if num != nil {
+			m[i] = &TreeNode{Val: num.(int)}
+		}
 	}
 	for i, _ := range nums {
 		if i == 0 {
 			root = m[i]
 		}
-		m[i].Left = m[2*i+1]
-		m[i].Right = m[2*i+2]
+		if m[i] != nil {
+			m[i].Left = m[2*i+1]
+			m[i].Right = m[2*i+2]
+		}
 	}
 	printer.Println(root)
 	return root
