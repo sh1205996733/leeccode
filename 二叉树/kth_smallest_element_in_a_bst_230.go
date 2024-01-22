@@ -1,21 +1,11 @@
-package main
+package binarytree
 
 import (
 	"container/list"
-	"fmt"
 )
 
-func main() {
-	nums := []int{-10, -3, 0, 5, 9}
-	fmt.Printf("%+v", kthSmallest(nums))
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
+// 二叉搜索树中第K小的元素
+// https://leetcode.cn/problems/kth-smallest-element-in-a-bst/description/
 func kthSmallest(root *TreeNode, k int) int {
 	stack := list.New()
 	node := root

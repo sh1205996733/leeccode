@@ -1,20 +1,8 @@
-package main
+package binarytree
 
 import (
 	"container/list"
-	"fmt"
 )
-
-func main() {
-	nums := []int{-10, -3, 0, 5, 9}
-	fmt.Printf("%+v", rangeSumBST(nums))
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
 
 type BSTIterator struct {
 	stack *list.List

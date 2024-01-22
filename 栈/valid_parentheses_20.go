@@ -1,4 +1,4 @@
-package monotonicstack
+package stack
 
 import "container/list"
 

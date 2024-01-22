@@ -1,14 +1,9 @@
-package main
+package array
 
-import (
-	"fmt"
-	"sort"
-)
+import "sort"
 
-func main() {
-	fmt.Println(containsDuplicate([]int{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}))
-}
-
+// 存在重复元素
+// https://leetcode.cn/problems/contains-duplicate/description/
 func containsDuplicate(nums []int) bool {
 	sort.Ints(nums)
 	for i := 1; i < len(nums); i++ {

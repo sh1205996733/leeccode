@@ -2,10 +2,11 @@ package monotonicstack
 
 import (
 	"fmt"
+	"leetcode/栈"
 	"testing"
 )
 
 func TestIsValid(t *testing.T) {
 	str := "()"
-	fmt.Println(isValid(str))
+	fmt.Println(stack.isValid(str))
 }

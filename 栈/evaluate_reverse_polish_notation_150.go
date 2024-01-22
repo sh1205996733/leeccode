@@ -1,7 +1,11 @@
-package main
+package stack
 
 import "strconv"
 
+// 逆波兰表达式求值
+// https://leetcode.cn/problems/evaluate-reverse-polish-notation/description/
+
+// 栈
 func evalRPN(tokens []string) int {
 	stack := make([]int, 0) //储存中间结果的栈
 	for _, ss := range tokens {

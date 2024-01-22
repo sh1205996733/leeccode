@@ -1,7 +1,6 @@
-package main
+package stack
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -37,15 +36,4 @@ func min(x, y int) int {
 
 func (this *MinStack) GetMin() int {
 	return this.minStack[len(this.minStack)-1]
-}
-
-func main() {
-	minStack := Constructor()
-	minStack.Push(-2)
-	minStack.Push(-1)
-	minStack.Push(-3)
-	fmt.Println(minStack.GetMin())
-	minStack.Pop()
-	fmt.Println(minStack.Top())
-	fmt.Println(minStack.GetMin())
 }

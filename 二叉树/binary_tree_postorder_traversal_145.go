@@ -1,45 +1,16 @@
-package main
+package binarytree
 
-import "container/list"
+// 二叉树的后序遍历
+// https://leetcode.cn/problems/binary-tree-postorder-traversal/description/
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func main() {
-
-}
-
-//func preorderTraversal(root *TreeNode) []int {
-//	if root == nil {
-//		return []int{}
-//	}
-//	return  append(append([]int{root.Val}, preorderTraversal(root.Left)...), preorderTraversal(root.Right)...)
-//}
-func postorderTraversal(root *TreeNode) []int {
+func postorderTraversal0(root *TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}
 	return append(append(postorderTraversal(root.Left), postorderTraversal(root.Right)...), root.Val)
 }
 
-//迭代 内耗大
-func postorderTraversal(root *TreeNode) (arr []int) {
-	if root == nil {
-		return []int{}
-	}
-	stack := list.New()
-	node := root
-	stack.PushBack(node)
-	for node != nil || stack.Len() > 0 {
-
-	}
-	return arr
-}
-
-//迭代 内耗小
+// 迭代 内耗小
 func postorderTraversal(root *TreeNode) (arr []int) {
 	if root == nil {
 		return []int{}

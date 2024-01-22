@@ -1,33 +1,10 @@
-/**
- * @Author:注释中编瞎话
- * @Date: 2022/3/30 0030
- */
+package string
 
-package main
+import "strings"
 
-import (
-	"fmt"
-	"strings"
-)
+// 验证回文串
+//https://leetcode.cn/problems/valid-palindrome/description/
 
-func main() {
-	//str1 :="A man, a plan, a canal: Panama"
-	//fmt.Printf("%d %d  %d %d\n",'a','z','A','Z')
-	instants := []string{
-		"  A man, a plan, a canal: Panama",
-		"race a car",
-	}
-	for i := 0; i < len(instants); i++ {
-		fmt.Println(instants[i], "结果", isPalindrome0(instants[i]))
-	}
-	//fmt.Println(isPalindrome(str1))
-}
-
-//48-57 ---0-9
-//65-90
-//97-122
-//leetcode submit region begin(Prohibit modification and deletion)
-//在原字符串上直接判断
 func isPalindrome0(str string) bool {
 	str = strings.ToLower(str)
 	length := len(str)
@@ -74,5 +51,3 @@ func isPalindrome(str string) bool {
 func isVaild(c byte) bool {
 	return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
 }
-
-//leetcode submit region end(Prohibit modification and deletion)
