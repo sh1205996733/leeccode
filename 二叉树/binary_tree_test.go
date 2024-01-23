@@ -79,3 +79,9 @@ func TestWidthOfBinaryTree(t *testing.T) {
 	root := MakePerfectBinaryTree(nums)
 	assert.Equal(t, widthOfBinaryTree(root), 2)
 }
+
+func TestConstructFromPrePost(t *testing.T) {
+	preorder := []int{1, 2, 4, 5, 3, 6, 7}
+	postorder := []int{4, 5, 2, 6, 7, 3, 1}
+	printer.Println(constructFromPrePost(preorder, postorder))
+}
