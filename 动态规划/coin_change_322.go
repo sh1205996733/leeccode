@@ -1,14 +1,13 @@
-package main
+package dp
 
 import (
 	"fmt"
 	"math"
 )
 
-func main() {
-	coins := []int{1, 5, 25, 20}
-	fmt.Println(coinChange(coins, 41))
-}
+// 零钱兑换
+// https://leetcode.cn/problems/coin-change/description/
+// 动态规划
 func coinChange(coins []int, money int) int {
 	if money < 1 || coins == nil || len(coins) == 0 {
 		return -1
@@ -35,16 +34,20 @@ func coinChange(coins []int, money int) int {
 	fmt.Println(dp)
 	return dp[money]
 }
+
+// 贪心
 func coinChange1(coins []int, money int) int {
 	sort(coins)
 	idx := len(coins) - 1
 	count := 0
 	for idx >= 0 {
-		for money >= coins[idx] {
-			money -= coins[idx]
-			fmt.Println(coins[idx])
-			count++
-		}
+		//for money >= coins[idx] {
+		//	money -= coins[idx]
+		//	count++
+		//}
+		k := money / coins[idx]
+		money -= k * coins[idx]
+		count += k
 		idx--
 	}
 	if money > 0 {

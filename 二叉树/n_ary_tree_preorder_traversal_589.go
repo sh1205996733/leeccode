@@ -1,27 +1,23 @@
-package main
+package binarytree
 
-type Node struct {
-	Val      int
-	Children []*Node
-}
+// N 叉树的前序遍历
+// https://leetcode.cn/problems/n-ary-tree-preorder-traversal/description/
 
-var a []int
-
-func preorder(root *Node) []int {
-	a = []int{}
-	dfs(root)
-	return a
-}
-func dfs(root *Node) {
-	if root != nil {
-		a = append(a, root.Val)
-		for _, v := range root.Children {
-			dfs(v)
+func preorderN0(root *Node) []int {
+	if root == nil {
+		return nil
+	}
+	ans := []int{root.Val}
+	for _, v := range root.Children {
+		ret := preorderN0(v)
+		if len(ret) > 0 {
+			ans = append(ans, ret...)
 		}
 	}
+	return ans
 }
 
-func preorder(root *Node) []int {
+func preorderN(root *Node) []int {
 	if root == nil {
 		return []int{}
 	}

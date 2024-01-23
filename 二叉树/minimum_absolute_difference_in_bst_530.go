@@ -1,22 +1,16 @@
-package main
+package binarytree
 
+// 二叉搜索树的最小绝对差
+// https://leetcode.cn/problems/minimum-absolute-difference-in-bst/description/
+// 二叉搜索树节点最小距离
+//  https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/
 import (
 	"container/list"
 	"math"
 )
 
-func main() {
-	getMinimumDifference(nil)
-}
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-//非递归-栈实现
-func getMinimumDifference(root *TreeNode) int {
+// 非递归-栈实现
+func getMinimumDifference0(root *TreeNode) int {
 	min := math.MaxInt64
 	var minVal = -1
 	stack := list.New()
@@ -48,7 +42,7 @@ func getMinimumDifference(root *TreeNode) int {
 	return min
 }
 
-//递归实现
+// 递归实现
 func minimumDifference(root *TreeNode) {
 	if root == nil {
 		return

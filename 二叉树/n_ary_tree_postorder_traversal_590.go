@@ -1,29 +1,24 @@
-package main
+package binarytree
 
-import "fmt"
+// N 叉树的后序遍历
+// https://leetcode.cn/problems/n-ary-tree-postorder-traversal/description/
 
-type Node struct {
-	Val      int
-	Children []*Node
-}
-
-var a []int
-
-func postorder1(root *Node) []int {
-	a = []int{}
-	dfs(root)
-	return a
-}
-func dfs(root *Node) {
+func postorderN0(root *Node) []int {
 	if root != nil {
-		for _, v := range root.Children {
-			dfs(v)
-		}
-		a = append(a, root.Val)
+		return nil
 	}
+	var ans []int
+	for _, v := range root.Children {
+		ret := postorderN0(v)
+		if len(ret) > 0 {
+			ans = append(ans, ret...)
+		}
+	}
+	ans = append(ans, root.Val)
+	return ans
 }
 
-func postorder(root *Node) []int {
+func postorderN(root *Node) []int {
 	if root == nil {
 		return []int{}
 	}
@@ -48,9 +43,4 @@ func postorder(root *Node) []int {
 		}
 	}
 	return ret
-}
-
-func main() {
-	postorder(nil)
-	fmt.Println("---------")
 }

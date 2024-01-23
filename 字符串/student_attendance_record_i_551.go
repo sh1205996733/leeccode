@@ -1,11 +1,7 @@
-package main
+package string
 
-import "fmt"
-
-func main() {
-	strs := "LLALL"
-	fmt.Println(checkRecord(strs))
-}
+// 学生出勤记录 I
+// https://leetcode.cn/problems/student-attendance-record-i/description/
 
 /**
  *	设置A、L计数器acount、lcount

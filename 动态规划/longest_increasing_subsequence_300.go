@@ -1,5 +1,7 @@
 package dp
 
+// 最长递增子序列
+// https://leetcode.cn/problems/longest-increasing-subsequence/description/
 // 10,9,2,5,3,7,101,18
 func lengthOfLIS(nums []int) int {
 	if nums == nil || len(nums) == 0 {
