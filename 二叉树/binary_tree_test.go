@@ -2,6 +2,7 @@ package binarytree
 
 import (
 	"fmt"
+	"github.com/bmizerany/assert"
 	"leetcode/二叉树/printer"
 	"testing"
 )
@@ -69,4 +70,12 @@ func TestFlatten(t *testing.T) {
 	root := MakePerfectBinaryTree(nums)
 	flatten(root)
 	printer.Println(root)
+}
+
+func TestWidthOfBinaryTree(t *testing.T) {
+	//nums := []any{1, 3, 2, 5, 3, nil, 9} //4
+	nums := []any{1, 3, 2, 5, nil, nil, 9, 6, nil, nil, nil, nil, nil, 7, nil} // 7
+	//nums := []any{1, 3, 2, 5} // 2
+	root := MakePerfectBinaryTree(nums)
+	assert.Equal(t, widthOfBinaryTree(root), 2)
 }

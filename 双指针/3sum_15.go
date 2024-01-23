@@ -1,12 +1,12 @@
-package array
+package pointer
 
 import "sort"
 
 // https://leetcode.cn/problems/3sum/
 //  三数之和
 
-// 方法一：排序+双指针
-// 时间复杂度：O(N)
+// 方法一：排序+双指针 同167两数之和
+// 时间复杂度：O(N^2)
 // 空间复杂度：O(1)
 func threeSum(nums []int) [][]int {
 	//排序

@@ -13,13 +13,13 @@ func trap0(height []int) int {
 	ans := 0
 	for i, h := range height {
 		leftMax := 0
-		for l := i - 1; l >= 0; l-- { //左边第一个最大值
+		for l := i - 1; l >= 0; l-- { //左边最大值
 			if height[l] > leftMax {
 				leftMax = height[l]
 			}
 		}
 		rightMax := 0
-		for r := i + 1; r < len(height); r++ { //右边第一个最大值
+		for r := i + 1; r < len(height); r++ { //右边最大值
 			if height[r] > rightMax {
 				rightMax = height[r]
 			}
@@ -32,28 +32,22 @@ func trap0(height []int) int {
 	return ans
 }
 
-// 方法二: 动态规划 优化方案一
-// 时间复杂度O(n^2)
-// 空间复杂度O(1)
+// 方法二: 动态规划 优化方案一(存储最大高度)
+// 时间复杂度O(n)
+// 空间复杂度O(n)
 func trap(height []int) int {
 	ans := 0
+	n := len(height)
+	leftMax, rightMax := make([]int, n), make([]int, n)
+	leftMax[0], rightMax[n-1] = height[0], height[n-1]
+	for i := 1; i < len(height); i++ {
+		leftMax[i] = max(leftMax[i-1], height[i])
+	}
+	for i := len(height) - 2; i >= 0; i-- {
+		rightMax[i] = max(rightMax[i+1], height[i])
+	}
 	for i, h := range height {
-		leftMax := 0
-		for l := i - 1; l >= 0; l-- { //左边第一个最大值
-			if height[l] > leftMax {
-				leftMax = height[l]
-			}
-		}
-		rightMax := 0
-		for r := i + 1; r < len(height); r++ { //右边第一个最大值
-			if height[r] > rightMax {
-				rightMax = height[r]
-			}
-		}
-		min := Min(leftMax, rightMax)
-		if min > h {
-			ans += min - h
-		}
+		ans += Min(leftMax[i], rightMax[i]) - h
 	}
 	return ans
 }
@@ -61,10 +55,10 @@ func trap(height []int) int {
 // 方法四: 单调栈 找第一个比他大的数
 // 时间复杂度O(n)
 // 空间复杂度O(n)
-func trap4(height []int) int {
+func trap2(height []int) int {
 	ans := 0
 	var stack []int
-	for i, _ := range height {
+	for i := range height {
 		for len(stack) > 0 && height[stack[len(stack)-1]] < height[i] {
 			h := height[stack[len(stack)-1]]
 			stack = stack[:len(stack)-1]
@@ -85,4 +79,10 @@ func Min(a, b int) int {
 		return a
 	}
 	return b
+}
+func Max(a, b int) int {
+	if b > a {
+		return b
+	}
+	return a
 }

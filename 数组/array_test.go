@@ -36,13 +36,6 @@ func TestSortColors(t *testing.T) {
 	fmt.Println(nums)
 }
 
-// 三数之和
-func TestThreeSum(t *testing.T) {
-	nums := []int{-1, 0, 1, 2, -1, -4}
-	ans := threeSum(nums)
-	fmt.Println(ans)
-}
-
 // 合并两个有序数组
 func TestMerge(t *testing.T) {
 	nums1 := []int{1, 2, 3, 0, 0, 0}
