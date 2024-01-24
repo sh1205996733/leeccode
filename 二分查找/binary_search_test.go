@@ -35,7 +35,7 @@ func TestLengthOfLIS(t *testing.T) {
 func TestFindMedianSortedArrays(t *testing.T) {
 	nums := []int{1, 3}
 	nums2 := []int{2, 4, 5}
-	fmt.Println(findMedianSortedArrays(nums, nums2))
+	fmt.Println(findMedianSortedArrays0(nums, nums2))
 }
 
 // 寻找峰值

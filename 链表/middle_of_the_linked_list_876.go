@@ -3,7 +3,7 @@ package linkedlist
 // https://leetcode.cn/problems/middle-of-the-linked-list/
 // 链表的中间结点
 
-// 方法一：todo
+// 方法一：暴力迭代
 // 时间复杂度：O(N)
 // 空间复杂度：O(1)
 func middleNode1(head *ListNode) *ListNode {
@@ -32,7 +32,3 @@ func middleNode(head *ListNode) *ListNode {
 	}
 	return slow
 }
-
-// 方法三：将链表转化成数组
-// 时间复杂度：O(N)
-// 空间复杂度：O(N)

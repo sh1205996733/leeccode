@@ -60,8 +60,6 @@ func backTrack(nums, path []int, visited []bool, depth int, ret *[][]int) {
 	}
 }
 
-//39.组合总和
-//
 //40. 组合总和 II
 //
 //46. 全排列

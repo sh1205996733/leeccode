@@ -1,5 +1,6 @@
 package binary_search
 
+// 寻找两个正序数组的中位数
 // https://leetcode.cn/problems/median-of-two-sorted-arrays/
 
 // 方法一：暴力法：合并两个有序数组。
@@ -36,6 +37,8 @@ func findMedianSortedArrays0(nums1 []int, nums2 []int) float64 {
 }
 
 // 优化
+// 时间复杂度：O(n+m)
+// 空间复杂度：O(n+m)
 func findMedianSortedArrays00(nums1 []int, nums2 []int) float64 {
 	len1, len2 := len(nums1), len(nums2)
 	if len1 == 0 && len2 == 0 {
@@ -59,17 +62,18 @@ func findMedianSortedArrays00(nums1 []int, nums2 []int) float64 {
 	return float64(newArray[mid-1]+newArray[mid]) / 2.0
 }
 
-// 看不懂？？？ todo
+// 时间复杂度：O(n+m)
+// 空间复杂度：O(1)
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	totalLength := len(nums1) + len(nums2)
 	midIndex := totalLength >> 1
 	if midIndex&1 == 1 {
 		return float64(getKthElement(nums1, nums2, midIndex+1))
 	}
-	midIndex1, midIndex2 := midIndex-1, midIndex
-	return float64(getKthElement(nums1, nums2, midIndex1+1)+getKthElement(nums1, nums2, midIndex2+1)) / 2.0
+	return float64(getKthElement(nums1, nums2, midIndex+1)+getKthElement(nums1, nums2, midIndex+1)) / 2.0
 }
 
+// 寻找有序数组中第k个数
 func getKthElement(nums1, nums2 []int, k int) int {
 	index1, index2 := 0, 0
 	for {
@@ -85,12 +89,11 @@ func getKthElement(nums1, nums2 []int, k int) int {
 		half := k / 2
 		newIndex1 := min(index1+half, len(nums1)) - 1
 		newIndex2 := min(index2+half, len(nums2)) - 1
-		pivot1, pivot2 := nums1[newIndex1], nums2[newIndex2]
-		if pivot1 <= pivot2 {
-			k -= (newIndex1 - index1 + 1)
+		if nums1[newIndex1] <= nums2[newIndex2] {
+			k -= newIndex1 - index1 + 1
 			index1 = newIndex1 + 1
 		} else {
-			k -= (newIndex2 - index2 + 1)
+			k -= newIndex2 - index2 + 1
 			index2 = newIndex2 + 1
 		}
 	}
