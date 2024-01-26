@@ -1,5 +1,6 @@
 package binary_search
 
+// 二分查找
 // https://leetcode.cn/problems/binary-search/
 
 // 方法一：二分查找

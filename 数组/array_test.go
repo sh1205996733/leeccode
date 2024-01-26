@@ -88,3 +88,9 @@ func TestGenerate(t *testing.T) {
 func TestGenerateII(t *testing.T) {
 	fmt.Println(getRow(4))
 }
+
+func TestProductExceptSelf(t *testing.T) {
+	//nums := []int{1, 2, 3, 4}
+	nums := []int{0, 2}
+	fmt.Println(productExceptSelf(nums))
+}

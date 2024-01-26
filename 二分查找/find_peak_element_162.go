@@ -1,5 +1,6 @@
 package binary_search
 
+// 寻找峰值
 // https://leetcode.cn/problems/find-peak-element/
 // 因为左右都是负无穷大且不存在相邻的值是一样的 所以直接遍历（找到最大值）
 // 方法一：暴力遍历 （找最大值）
@@ -12,7 +13,7 @@ func findPeakElement0(nums []int) int {
 			idx = i
 		}
 	}
-	return -1
+	return idx
 }
 
 // 方法二：二分查找 只要找到上升、下降的必然符合

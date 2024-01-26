@@ -66,6 +66,4 @@ func backTrack(nums, path []int, visited []bool, depth int, ret *[][]int) {
 //
 //47. 全排列 II
 //
-//78. 子集
-//
 //90. 子集 II

@@ -42,3 +42,10 @@ func TestLetterCombinations(t *testing.T) {
 	ret := letterCombinations("9")
 	fmt.Println(ret)
 }
+
+// 子集
+func TestSubsets(t *testing.T) {
+	nums := []int{1, 2, 3, 4, 5}
+	ret := subsets(nums)
+	fmt.Println(ret)
+}
